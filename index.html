@@ -2,22 +2,22 @@
 layout: default
 ---
 {% for post in paginator.posts %}
-<img src="/images/{{ post.content }}" />
+<img src="images/{{ post.content }}" />
 {% endfor %}
 
 <div id="pagination">
-{% if paginator.previous_page %}
-{% if paginator.previous_page == 1 %}
-<span><a href="/">&laquo; Previous</a></span>
-{% else %}
-<span><a href="/page{{ paginator.previous_page }}/">&laquo; Previous</a></span>
-{% endif %}
-{% else %}
-<span class="inactive">&laquo; Previous</span>
-{% endif %}
-{% if paginator.next_page %}
-<span><a href="/page{{ paginator.next_page }}/">Next &raquo;</a></span>
-{% else %}
-<span class="inactive">Next &raquo;</span>
-{% endif %}
+    {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+    <span><a href="/">&laquo; Previous</a></span>
+    {% else %}
+    <span><a href="/page{{ paginator.previous_page }}/">&laquo; Previous</a></span>
+    {% endif %}
+    {% else %}
+    <span class="inactive">&laquo; Previous</span>
+    {% endif %}
+    {% if paginator.next_page %}
+    <span><a href="/page{{ paginator.next_page }}/">Next &raquo;</a></span>
+    {% else %}
+    <span class="inactive">Next &raquo;</span>
+    {% endif %}
 </div>
